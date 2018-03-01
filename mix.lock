@@ -1,3 +1,3 @@
 %{
-  "protobuf": {:hex, :protobuf, "0.5.2", "c1338db827614cbe03a479ac9ef22bd8f3d0ff8a6bb44db5f63037688cd7806c", [:mix], [], "hexpm"},
+  "protobuf": {:hex, :protobuf, "0.5.2", "c1338db827614cbe03a479ac9ef22bd8f3d0ff8a6bb44db5f63037688cd7806c", [:mix], []},
 }
