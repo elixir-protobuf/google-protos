@@ -15,10 +15,7 @@ defmodule GoogleProtos.MixProject do
   end
 
   def application do
-    [
-      extra_applications: [:logger],
-      mod: {GoogleProtos, []}
-    ]
+    []
   end
 
   defp deps do
