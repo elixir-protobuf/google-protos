@@ -3,7 +3,7 @@ defmodule Google.Protobuf.DoubleValue do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          value: float
+          value: float | :infinity | :negative_infinity | :nan
         }
   defstruct [:value]
 
@@ -15,7 +15,7 @@ defmodule Google.Protobuf.FloatValue do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          value: float
+          value: float | :infinity | :negative_infinity | :nan
         }
   defstruct [:value]
 
@@ -99,7 +99,7 @@ defmodule Google.Protobuf.BytesValue do
   use Protobuf, syntax: :proto3
 
   @type t :: %__MODULE__{
-          value: String.t()
+          value: binary
         }
   defstruct [:value]
 

@@ -20,7 +20,7 @@ defmodule GoogleProtos.MixProject do
 
   defp deps do
     [
-      {:protobuf, "~> 0.5"},
+      {:protobuf, "~> 0.7"},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end

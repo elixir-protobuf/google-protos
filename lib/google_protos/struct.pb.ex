@@ -1,13 +1,10 @@
-defmodule Google.Protobuf.Struct do
+defmodule Google.Protobuf.NullValue do
   @moduledoc false
-  use Protobuf, syntax: :proto3
+  use Protobuf, enum: true, syntax: :proto3
 
-  @type t :: %__MODULE__{
-          fields: %{String.t() => Google.Protobuf.Value.t()}
-        }
-  defstruct [:fields]
+  @type t :: integer | :NULL_VALUE
 
-  field :fields, 1, repeated: true, type: Google.Protobuf.Struct.FieldsEntry, map: true
+  field :NULL_VALUE, 0
 end
 
 defmodule Google.Protobuf.Struct.FieldsEntry do
@@ -16,12 +13,24 @@ defmodule Google.Protobuf.Struct.FieldsEntry do
 
   @type t :: %__MODULE__{
           key: String.t(),
-          value: Google.Protobuf.Value.t()
+          value: Google.Protobuf.Value.t() | nil
         }
   defstruct [:key, :value]
 
   field :key, 1, type: :string
   field :value, 2, type: Google.Protobuf.Value
+end
+
+defmodule Google.Protobuf.Struct do
+  @moduledoc false
+  use Protobuf, syntax: :proto3
+
+  @type t :: %__MODULE__{
+          fields: %{String.t() => Google.Protobuf.Value.t() | nil}
+        }
+  defstruct [:fields]
+
+  field :fields, 1, repeated: true, type: Google.Protobuf.Struct.FieldsEntry, map: true
 end
 
 defmodule Google.Protobuf.Value do
@@ -52,11 +61,4 @@ defmodule Google.Protobuf.ListValue do
   defstruct [:values]
 
   field :values, 1, repeated: true, type: Google.Protobuf.Value
-end
-
-defmodule Google.Protobuf.NullValue do
-  @moduledoc false
-  use Protobuf, enum: true, syntax: :proto3
-
-  field :NULL_VALUE, 0
 end

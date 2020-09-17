@@ -4,7 +4,7 @@ defmodule Google.Protobuf.Any do
 
   @type t :: %__MODULE__{
           type_url: String.t(),
-          value: String.t()
+          value: binary
         }
   defstruct [:type_url, :value]
 
