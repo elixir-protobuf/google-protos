@@ -5,7 +5,7 @@ defmodule GoogleProtos.MixProject do
     [
       app: :google_protos,
       name: "Google Protos",
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.4",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -20,7 +20,7 @@ defmodule GoogleProtos.MixProject do
 
   defp deps do
     [
-      {:protobuf, "~> 0.5"},
+      {:protobuf, "~> 0.8"},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
