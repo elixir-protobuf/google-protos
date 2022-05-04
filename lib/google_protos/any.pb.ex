@@ -6,11 +6,8 @@ defmodule Google.Protobuf.Any do
           type_url: String.t(),
           value: binary
         }
-
   defstruct [:type_url, :value]
 
-  field :type_url, 1, type: :string, json_name: "typeUrl"
+  field :type_url, 1, type: :string
   field :value, 2, type: :bytes
-
-  def transform_module(), do: nil
 end
