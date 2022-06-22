@@ -20,8 +20,8 @@ defmodule GoogleProtos.MixProject do
 
   defp deps do
     [
-      {:protobuf, "~> 0.8"},
-      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:protobuf, "~> 0.10"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
@@ -29,7 +29,7 @@ defmodule GoogleProtos.MixProject do
     [
       maintainers: ["Tony Han"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/tony612/google-protos"},
+      links: %{"GitHub" => "https://github.com/elixir-protobuf/google-protos"},
       files: ~w(mix.exs README.md lib config LICENSE)
     ]
   end
