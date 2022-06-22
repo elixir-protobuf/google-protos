@@ -1,9 +1,4 @@
 defmodule Google.Protobuf.Empty do
   @moduledoc false
-  use Protobuf, syntax: :proto3
-  @type t :: %__MODULE__{}
-
-  defstruct []
-
-  def transform_module(), do: nil
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 end
