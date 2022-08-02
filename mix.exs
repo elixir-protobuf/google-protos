@@ -30,7 +30,7 @@ defmodule GoogleProtos.MixProject do
       maintainers: ["Tony Han", "Andrea Leopardi"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/elixir-protobuf/google-protos"},
-      files: ~w(mix.exs README.md lib config LICENSE)
+      files: ~w(mix.exs README.md lib LICENSE)
     ]
   end
 end
