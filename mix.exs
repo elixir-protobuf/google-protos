@@ -6,7 +6,7 @@ defmodule GoogleProtos.MixProject do
       app: :google_protos,
       name: "Google Protos",
       version: "0.3.0",
-      elixir: "~> 1.",
+      elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: "Protos by Google",
