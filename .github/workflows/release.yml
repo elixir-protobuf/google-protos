@@ -1,9 +1,9 @@
 name: Release on Hex
 
 on:
-  push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+  release:
+    types: [published]
+
 jobs:
   publish:
     name: Publish
