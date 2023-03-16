@@ -8,10 +8,11 @@ PROTOS=("
     protobuf/src/google/protobuf/struct.proto
     protobuf/src/google/protobuf/timestamp.proto
     protobuf/src/google/protobuf/wrappers.proto
+    googleapis/google/type/money.proto
 ")
 
 rm -rf ./lib/google_protos/*
 
 for file in $PROTOS; do
-  protoc -I ./protobuf/src/google/protobuf/ --elixir_out=plugins=grpc:./lib/google_protos $file
+  protoc -I ./${file%/*}/ --elixir_out=plugins=grpc:./lib/google_protos $file
 done
