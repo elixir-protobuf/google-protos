@@ -10,7 +10,7 @@ PROTOS=("
     protobuf/src/google/protobuf/wrappers.proto
 ")
 
-rm -rf ./lib/google_protos/*
+rm -rf ./lib/google_protos/*.pb.ex
 
 for file in $PROTOS; do
   protoc -I ./protobuf/src/google/protobuf/ --elixir_out=plugins=grpc:./lib/google_protos $file
