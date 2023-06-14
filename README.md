@@ -4,9 +4,9 @@ For Elixir files generated from [Google's protobuf files](https://github.com/goo
 
 By including `google_protos` in your `mix.exs`, you'll have access to _some_ of the `google.protobuf.*` modules already compiled to Elixir. This can help simplify your protobuf compiling pipeline. For your benefit, we also include some helper functions for converting the protobuf structs to native Elixir modules. See the documentation for more details.
 
-## Docuemntation
+## Documentation
 
-Docuemntation is available on [hex.pm](https://hexdocs.pm/google_protos/).
+Documentation is available on [hex.pm](https://hexdocs.pm/google_protos/).
 
 ## Usage
 
