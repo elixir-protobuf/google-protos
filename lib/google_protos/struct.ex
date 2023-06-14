@@ -61,6 +61,12 @@ defmodule Google.Protobuf.Struct do
 
   @doc """
   Converts a `Google.Protobuf.Struct` to a `map()`.
+
+  ## Examples
+
+      iex> Struct.to_map(%Struct{})
+      %{}
+
   """
   @spec to_map(__MODULE__.t()) :: map()
   def to_map(struct) do
@@ -82,6 +88,12 @@ defmodule Google.Protobuf.Struct do
 
   @doc """
   Converts a `map()` to a `Google.Protobuf.Struct`.
+
+  ## Examples
+
+      iex> Struct.from_map(%{key: "value"})
+      %Struct{}
+
   """
   @spec from_map(map()) :: __MODULE__.t()
   def from_map(map) do

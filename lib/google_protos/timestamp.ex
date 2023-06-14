@@ -40,14 +40,18 @@ defmodule Google.Protobuf.Timestamp do
   Converts a `DateTime` struct to a `#{__MODULE__}` struct.
 
   Note: Elixir `DateTime.from_unix!/2` will convert units to
-  microseconds internally. To keep the nanosecond precision,
-  we manually change the `DateTime` `:microsecond` precision.
+  microseconds internally. Nanosecond precision is not guaranteed.
+  See examples for details.
 
   ## Examples
 
-      iex> %Google.Protobuf.Timestamp{seconds: 5, nanos: 0}
-      ...> |> Google.Protobuf.Timestamp.to_datetime()
+      iex> Timestamp.to_datetime(%Timestamp{seconds: 5, nanos: 0})
       ~U[1970-01-01 00:00:05.000000Z]
+
+      iex> one = Timestamp.to_datetime(%Timestamp{seconds: 10, nanos: 100})
+      ...> two = Timestamp.to_datetime(%Timestamp{seconds: 10, nanos: 105})
+      ...> DateTime.diff(one, two, :nanosecond)
+      0
 
   """
   @spec to_datetime(__MODULE__.t()) :: DateTime.t()
@@ -60,9 +64,8 @@ defmodule Google.Protobuf.Timestamp do
 
   ## Examples
 
-      iex> ~U[1970-01-01 00:00:05.000000Z]
-      ...> |> Google.Protobuf.Timestamp.from_datetime()
-      %Google.Protobuf.Timestamp{seconds: 5, nanos: 0}
+      iex> Timestamp.from_datetime(~U[1970-01-01 00:00:05.000000Z])
+      %Timestamp{seconds: 5, nanos: 0}
 
   """
   @spec from_datetime(DateTime.t()) :: __MODULE__.t()
