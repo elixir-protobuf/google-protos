@@ -1,22 +1,5 @@
 defmodule Google.Protobuf.Duration do
-  @moduledoc """
-  A Duration represents a signed, fixed-length span of time represented
-  as a count of seconds and fractions of seconds at nanosecond
-  resolution. It is independent of any calendar and concepts like "day"
-  or "month". It is related to Timestamp in that the difference between
-  two Timestamp values is a Duration and it can be added or subtracted
-  from a Timestamp. Range is approximately +-10,000 years.
-
-  ## JSON Mapping
-
-  In JSON format, the Duration type is encoded as a string rather than an
-  object, where the string ends in the suffix "s" (indicating seconds) and
-  is preceded by the number of seconds, with nanoseconds expressed as
-  fractional seconds. For example, 3 seconds with 0 nanoseconds should be
-  encoded in JSON format as "3s", while 3 seconds and 1 nanosecond should
-  be expressed in JSON format as "3.000000001s", and 3 seconds and 1
-  microsecond should be expressed in JSON format as "3.000001s".
-  """
+  @moduledoc false
 
   use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 

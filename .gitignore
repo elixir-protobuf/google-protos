@@ -21,8 +21,3 @@ erl_crash.dump
 
 # Ignore package tarball (built via "mix hex.build").
 google_protobuf-*.tar
-
-# Ignore generated protobufs that have been enhanced and overwritten.
-lib/google_protos/duration.pb.ex
-lib/google_protos/struct.pb.ex
-lib/google_protos/timestamp.pb.ex
