@@ -21,13 +21,13 @@ for template_file in priv/templates/*.pb.ex; do
   replacement_file="lib/google_protos/$file_name"
 
   if [ -f "$replacement_file" ]; then
-    for module in $(sed -n -E "s/defmodule\s(.+)\sdo/\1/p" "$template_file"); do
-      replacement_text=$(cat "$template_file" | sed -n "/^defmodule\s$module\sdo$/,/^end$/p" | sed 1,2d)
-      line_to_replace=$(cat -n "$replacement_file" | sed -n "/defmodule\s$module\sdo$/,/end$/p" | grep "end" | awk '{print $1}')
+    for module in $(sed -n -E "s/defmodule (.+) do/\1/p" "$template_file"); do
+      replacement_text=$(cat "$template_file" | sed -n "/^defmodule $module do$/,/^end$/p" | sed 1,2d)
+      line_to_replace=$(cat -n "$replacement_file" | sed -n "/defmodule $module do$/,/end$/p" | grep "end" | awk '{print $1}')
 
       export REPLACEMENT_TEXT=$replacement_text
       perl -i -pe "s/end/\$ENV{\"REPLACEMENT_TEXT\"}/g if $. == $line_to_replace" "$replacement_file"
-      unset $REPLACEMENT_TEXT
+      unset REPLACEMENT_TEXT
     done
   fi
 done
