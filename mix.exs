@@ -9,6 +9,7 @@ defmodule GoogleProtos.MixProject do
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      docs: docs(),
       description: "Protos by Google",
       package: package()
     ]
@@ -20,8 +21,18 @@ defmodule GoogleProtos.MixProject do
 
   defp deps do
     [
-      {:protobuf, "~> 0.10"},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:protobuf, "~> 0.12"},
+      {:ex_doc, "~> 0.29", only: :dev},
+      {:jason, "~> 1.4", only: :test}
+    ]
+  end
+
+  defp docs do
+    [
+      extras: [
+        "README.md": [filename: "overview", title: "Overview"]
+      ],
+      main: "overview"
     ]
   end
 
