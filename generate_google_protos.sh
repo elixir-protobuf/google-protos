@@ -31,3 +31,5 @@ for template_file in priv/templates/*.pb.ex; do
     done
   fi
 done
+
+mix format
