@@ -13,5 +13,5 @@ PROTOS=("
 rm -rf ./lib/google_protos/*
 
 for file in $PROTOS; do
-  protoc -I ./protobuf/src/google/protobuf/ --elixir_out=plugins=grpc:./lib/google_protos $file
+  protoc -I ./protobuf/src/google/protobuf/ --elixir_out=plugins=grpc,gen_descriptors=true:./lib/google_protos $file
 done
