@@ -12,5 +12,5 @@ For Elixir files generated from [Google's protobuf files](https://github.com/goo
 
 ```elixir
 timestamp = Google.Protobuf.Timestamp.new(seconds: 5, nanos: 100)
-DateTime.from_unix!(timestamp.seconds * 1_000_000_000 + timestamp.nanos, :nanosecond)
+DateTime.from_unix!(timestamp.seconds * 1_000_000 + timestamp.nanos, :nanosecond)
 ```
